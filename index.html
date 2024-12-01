@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Öğrenci Yönetim Sistemi</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="images.png" alt="Sol Logo" class="header-logo">
+        <h1>Öğrenci Bilgi Sistemi</h1>
+        <img src="images.png" alt="Sağ Logo" class="header-logo">
+    </header>
+    
+    <div id="main-container">
+        <aside id="left-sidebar">
+            <h3>Sınıf durumu</h3>
+            <button id="view-all-students">Tüm Öğrencileri Gör</button>
+            <button id="view-passed-students">Geçen Öğrencileri Gör</button>
+            <button id="view-failed-students">Kalan Öğrencileri Gör</button>
+            <table id="quick-actions-table">
+                <thead>
+                    <tr>
+                        <th>Öğrenci No</th>
+                        <th>Ad Soyad</th>
+                        <th>Harf Notu</th>
+                        <th>Ders</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </aside>
+
+        <main>
+            <section id="add-course-section">
+                <h2>Ders Ekle</h2>
+                <form id="add-course-form">
+                    <label for="course-name">Ders Adı:</label>
+                    <input type="text" id="course-name" placeholder="Ders adı girin" required>
+                    <label for="grading-scale">Notlandırma Ölçeği:</label>
+                    <select id="grading-scale">
+                        <option value="10-point">10 Puanlık Ölçek</option>
+                        <option value="7-point">7 Puanlık Ölçek</option>
+                    </select>
+                    <button type="submit">Ders Ekle</button>
+                </form>
+            </section>
+            <section id="add-student-section">
+                <h2>Öğrenci Ekle</h2>
+                <form id="add-student-form">
+                    <label for="student-id">Öğrenci Numarası:</label>
+                    <input type="text" id="student-id" placeholder="Öğrenci numarası girin" required>
+                    <label for="student-name">Ad:</label>
+                    <input type="text" id="student-name" placeholder="Ad girin" required>
+                    <label for="student-surname">Soyad:</label>
+                    <input type="text" id="student-surname" placeholder="Soyad girin" required>
+                    <label for="student-course">Ders:</label>
+                    <select id="student-course" required>
+                        <option value="none">Bir ders seçin</option>
+                    </select>
+                    <label for="midterm-score">Vize:</label>
+                    <input type="number" id="midterm-score" placeholder="Vize notu" required>
+                    <label for="final-score">Final:</label>
+                    <input type="number" id="final-score" placeholder="Final notu" required>
+                    <button type="submit">Öğrenci Ekle</button>
+                </form>
+            </section>
+
+            <section id="results-section">
+                <h2>Öğrenci Notları</h2>
+                <label for="course-filter">Ders Seç:</label>
+                <select id="course-filter">
+                    <option value="all">Tüm dersler</option>
+                </select>
+                <table id="results-table">
+                    <thead>
+                        <tr>
+                            <th>Öğrenci No</th>
+                            <th>Ad Soyad</th>
+                            <th>Ders</th>
+                            <th>Vize</th>
+                            <th>Final</th>
+                            <th>Harf Notu</th>
+                            <th>İşlemler</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="search-section">
+                <h2>Öğrenci Ara</h2>
+                <form id="search-form">
+                    <input type="text" id="search-input" placeholder="Ad, Soyad veya Numara girin" />
+                    <button type="submit">Ara</button>
+                </form>
+                <table id="search-results-table">
+                    <thead>
+                        <tr>
+                            <th>Öğrenci No</th>
+                            <th>Ad Soyad</th>
+                            <th>Ders</th>
+                            <th>Harf Notu</th>
+                            <th>GPA</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+
+        <aside id="right-sidebar">
+            <h3>Sınıf İstatistikleri</h3>
+            <form id="course-stats-form">
+                <label for="course-stats-name">Ders Seç:</label>
+                <select id="course-stats-name">
+                    <option value="none">Bir ders seçin</option>
+                </select>
+                <button type="submit">İstatistikleri Gör</button>
+            </form>
+            <div id="course-stats-result">
+                <p>Toplam Öğrenci: -</p>
+                <p>Geçen Öğrenci: -</p>
+                <p>Kalan Öğrenci: -</p>
+                <p>Sınıf Ortalaması: -</p>
+            </div>
+        </aside>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
